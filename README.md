@@ -31,7 +31,7 @@
 - Code impossible à lire
 
 Lien rapport : https://plmlatex.math.cnrs.fr/7377846448xdjptfpmwjkd
-
+Lien Notion: https://www.notion.so/Point-cloud-project-1957b53391b0809fa051db3bc5a666ad
 ## Initial mail
 Bonjour,
 
