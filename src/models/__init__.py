@@ -1,2 +1,2 @@
-
-from .lenet import LeNet
+from .DeepSDF import * 
+from .Sirenlayer import * 
