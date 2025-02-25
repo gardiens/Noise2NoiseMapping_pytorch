@@ -59,9 +59,10 @@ def evaluate_loss_cst_vf(
         loss_hint = loss_amb(net, hints_pc, gtsdf, batch_size)
         list_loss["hint"].append(float(loss_hint))
         loss+=lambda_hint * loss_hint
-    loss_eik = loss_eikonal(net, batch_size,dim_space=dim_space)
-    list_loss["eik"].append(float(loss_eik))
-    loss+=lambda_eik * loss_eik
+    if lambda_eik>0:
+        loss_eik = loss_eikonal(net, batch_size,dim_space=dim_space)
+        list_loss["eik"].append(float(loss_eik))
+        loss+=lambda_eik * loss_eik
     # loss_lse = loss_lse_eq(net, vf, batch_size)
 
     # append all the losses

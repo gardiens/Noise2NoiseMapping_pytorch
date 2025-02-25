@@ -27,7 +27,6 @@ def compute_EMD(net,input_pc ,batch_size,dim_space=2,device='cuda'):
     emd_value = emd_value.to(device)
     return emd_value
 
-    import numpy as np
 import geomloss
 import torch
 from geomloss import SamplesLoss

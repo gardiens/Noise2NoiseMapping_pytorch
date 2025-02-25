@@ -54,6 +54,5 @@ def loss_geometric_consistency2(net,input_pc,batch_size=2000,dim_space=2):
     # E = torch.abs(torch.norm(d) - min_distances.unsqueeze(1))  # Broadcasting
     E= min_distances.mean()
 
-    regularization_term = E
 
     return E if input_pc.shape[0] > 0 else torch.tensor(0.0)
