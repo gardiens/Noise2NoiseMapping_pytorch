@@ -32,7 +32,7 @@ import torch
 from geomloss import SamplesLoss
 class EMD_loss(torch.nn.Module):
     def __init__(self):
-        super(EMD_loss, self).__init__()
+        super().__init__()
         self.loss=SamplesLoss(loss="sinkhorn")
 
     def forward(self, x, y):

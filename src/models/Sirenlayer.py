@@ -23,6 +23,7 @@ class SirenLayer(nn.Module):
                 size = 1 / self.in_features
             else:
                 size = np.sqrt(6 / self.in_features) / self.omega_0
+
                 ## Other initialization
             self.fc1.weight.uniform_(-size, size)
 

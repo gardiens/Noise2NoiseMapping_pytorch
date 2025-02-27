@@ -107,13 +107,15 @@ def optimize_nise_vf(
     nepochs=100,
     plot_loss=True,
     list_loss=[],
-    follow_paper=False
+    follow_paper=False,
+    optim=None
 ):
     # pc0, nc0, hints0, gtsdf0 are the input data at time  0
     # vf is the velocity field
     # lpc, leik, lh, llse are lists to store the losses
     # lambda_pc, lambda_eik, lambda_hint, lambda_lse are the weights of the losses
-    optim = torch.optim.Adam(params=net.parameters(), lr=1e-4)
+    if optim is None:
+        optim = torch.optim.Adam(params=net.parameters(), lr=1e-4)
     print(f"starting loss, lambda_pc={lambda_pc}, lambda_eik={lambda_eik}, lambda_hint={lambda_hint}, lambda_lse={lambda_lse}, lambda_gc={lambda_gc}, lambda_emd={lambda_emd}")
     if follow_paper:
         print("beware HARDCODED version")

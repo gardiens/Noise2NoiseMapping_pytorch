@@ -332,3 +332,4 @@ cython_debug/
 *.batch
 *.npy
 *.txt
+datasets/

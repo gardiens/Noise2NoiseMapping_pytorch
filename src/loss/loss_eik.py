@@ -14,5 +14,5 @@ def loss_eikonal(net, batch_size, dim_space=2):
     sdf_random = net(pts_random)
 
     grad_tot_random = gradient(sdf_random, pts_random)
-    grad_spatial = grad_tot_random[:, 0:2]
+    grad_spatial = grad_tot_random[:, 0:dim_space]
     return loss_eikonal_pts(grad_spatial)

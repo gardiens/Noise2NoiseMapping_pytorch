@@ -2,7 +2,30 @@ import torch
 import torch.nn as nn
 import numpy as np
 import matplotlib.pyplot as plt
+def display_projection(net, input_pc):
+    """
+    Projects the input point cloud onto a learned surface using the SDF network 
+    and displays the projected points in 2D.
+    """
+    # Compute signed distance and gradient
+    from src.loss.utils import gradient
+    d = net(input_pc)
+    grad = gradient(d, input_pc)
+    
+    # Compute the projected points
+    S_projected = input_pc - d * grad / torch.norm(grad, dim=1, keepdim=True)
 
+    # Display as 2D scatter plot
+    fig, ax = plt.subplots(figsize=(8, 8))  # Fix subplot initialization
+    pc_numpy = S_projected.detach().cpu().numpy()
+
+    ax.scatter(pc_numpy[:, 0], pc_numpy[:, 1])
+    ax.set_aspect(1.0 / ax.get_data_ratio(), adjustable="box")
+    ax.set_xlim([-1, 1])
+    ax.set_ylim([-1, 1])
+    ax.set_title("Projected Points")
+
+    plt.show()
 def display_result(f, resolution, filename=None, figsize=(14, 5),title="",eps=0.005):
     """
     Displays the values of the function f, evaluated over a regular grid 
@@ -27,7 +50,7 @@ def display_result(f, resolution, filename=None, figsize=(14, 5),title="",eps=0.
 
     # Forward pass through the network
     sdf = f(coords)
-
+    print("the sdf that will be displayed:",sdf)
     # Fix reshaping: Remove singleton dimension if present
     sdf = sdf.squeeze(-1).reshape(resolution, resolution)
     numpy_sdf = sdf.detach().cpu().numpy()
@@ -56,3 +79,16 @@ def display_result(f, resolution, filename=None, figsize=(14, 5),title="",eps=0.
     else:
         plt.savefig(filename)
         plt.close()
+
+def display_loss(list_loss,skip_keys=[]):
+    plt.figure(figsize=(6, 4))
+    plt.yscale("log")
+    for keys in list_loss.keys():
+        
+        loss=list_loss[keys]
+        if len(loss)==0 or keys in skip_keys:
+            continue
+        print("keys",keys,loss)
+        plt.plot(loss,label="loss:{} ({:.2f})".format(keys,loss[-1]))
+    plt.xlabel("Epochs")
+    plt.legend()

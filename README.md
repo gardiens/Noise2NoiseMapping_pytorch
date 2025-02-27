@@ -25,6 +25,9 @@
 </div>
 
 
+# Pipeline :
+Generation des modèles: On utilise gen_noise en suivant la pipeline de Point2Surf
+
 # First point of View
 - Dnas le code y'a pas de Hash  function
 - Loss un peu nouveau avec Earth mover Distance
