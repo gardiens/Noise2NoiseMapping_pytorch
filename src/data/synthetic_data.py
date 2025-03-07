@@ -69,3 +69,13 @@ def square_data(npts, nb_hints, resolution=200) :
 def cst_radialVF(pc):
     vf = torch.nn.functional.normalize(pc[:,0:2])
     return vf
+
+def add_noise(pc0,sigma=0.01):
+    # add random noise to the point cloud
+    noise = torch.randn_like(pc0) * sigma
+    return pc0 + noise
+
+def add_noise_along_circle(pc0,scale=0.01):
+    # add unfirom noise along the circle
+    noise= torch.rand_like(pc0)*scale
+    return pc0 + pc0*noise

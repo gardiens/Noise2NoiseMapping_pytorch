@@ -43,14 +43,12 @@ def display_result(f, resolution, filename=None, figsize=(14, 5),title="",eps=0.
     # Create a grid of coordinates
     coords = torch.stack(list(torch.meshgrid([torch.linspace(-1, 1, resolution, device=device)] * 2, indexing='xy')), dim=2)
     coords = coords.reshape(-1, 2)  # Shape: (resolution*resolution, 2)
-    print("coords shape before adding t:", coords.shape)
 
     # Ensure coordinates require gradients
     coords.requires_grad = True
 
     # Forward pass through the network
     sdf = f(coords)
-    print("the sdf that will be displayed:",sdf)
     # Fix reshaping: Remove singleton dimension if present
     sdf = sdf.squeeze(-1).reshape(resolution, resolution)
     numpy_sdf = sdf.detach().cpu().numpy()
@@ -88,7 +86,6 @@ def display_loss(list_loss,skip_keys=[]):
         loss=list_loss[keys]
         if len(loss)==0 or keys in skip_keys:
             continue
-        print("keys",keys,loss)
         plt.plot(loss,label="loss:{} ({:.2f})".format(keys,loss[-1]))
     plt.xlabel("Epochs")
     plt.legend()

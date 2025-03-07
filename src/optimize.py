@@ -183,7 +183,7 @@ def optimize_nise_vf(
             pbar.set_postfix({"loss": loss.item()})
         pbar.update(1)
         if batch %pot_every_loss==0 and plot_loss:
-            display_result(net, resolution=200, figsize=(14, 5))
+            display_result(net, resolution=200, figsize=(14, 5),title=" result at epoch {}".format(batch))
     tend = time.time()
 
     print("Optimizing NN took", "{:.2f}".format(tend - tinit), "s.")
