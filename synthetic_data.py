@@ -4,9 +4,9 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 
 
-def sphere_data(npts, nb_hints, resolution=50):
+def sphere_data(npts, nb_hints, resolution=50,dim=2):
     # Generate npts random points in 3D and project them onto the surface of a sphere of radius 0.5
-    pts = torch.randn(npts, 3, device=device)
+    pts = torch.randn(npts, dim, device=device)
     pc = 0.5 * torch.nn.functional.normalize(pts, dim=1)
     # For normals, you could use the original random directions (or recompute from pc)
     nc = torch.nn.functional.normalize(pts, dim=1)
