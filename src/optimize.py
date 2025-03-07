@@ -104,6 +104,7 @@ def optimize_nise_vf(
     lambda_emd=1,
     lambda_gc2=0,
     batch_size=2000,
+    pot_every_loss=2000,
     nepochs=100,
     plot_loss=True,
     list_loss=[],
@@ -181,7 +182,7 @@ def optimize_nise_vf(
             # print(f"Epoch {batch}/{nepochs} - loss : {loss.item()}")
             pbar.set_postfix({"loss": loss.item()})
         pbar.update(1)
-        if batch %2000==0 and plot_loss:
+        if batch %pot_every_loss==0 and plot_loss:
             display_result(net, resolution=200, figsize=(14, 5))
     tend = time.time()
 
