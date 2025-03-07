@@ -31,6 +31,7 @@ def project_pc(net,input_pc):
 def alternative_random_choice(
     array: "torch.tensor", size: int, replace: bool = False, shape: int = 0
 ):
+    size= min(size, array.shape[shape])
     weights = torch.ones(array.shape[shape])
 
     idx = torch.multinomial(weights, size, replacement=replace)
