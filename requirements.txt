@@ -1,11 +1,12 @@
-clearml
-scikit-learn
-hydra-core
-pytest
-pre-commit
 matplotlib
 
 numpy
 tqdm
 notebook
 tensorboard
+pykeops
+geomloss
+jupyter 
+scikit-image
+commentjson
+POT

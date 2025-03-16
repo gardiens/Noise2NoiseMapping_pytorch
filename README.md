@@ -17,7 +17,7 @@
 <h3 align="center"> Unofficial version of Fast Learning Signed Distance Functions from Noisy 3D Point Clouds via Noise to Noise Mapping </h3>
 
   <p align="center">
-     Unofficial Pytorch implementation  for Noise 2 Noise in Point cloud 
+     Unofficial Pytorch implementation  for Noise 2 Noise in Point cloud  by  Nayoung Kwon and  Pierrick Bournez
     <br />
     <a href="https://gitlab-student.centralesupelec.fr/alix.chazottes/fmr-2024-segmentation-hierarchique"><strong>Explore the docs »</strong></a>
 
@@ -51,7 +51,8 @@ If the  installation of the fancy InstantNGP models doesn't work, see the [repos
 # 🚀 Usage
 We provide two mains models. One with the Multi Hash Resolution Resolution and [SirenNET] as a comparison. 
 We Mostly tested our implementation on 2D Data so we can assess the underlying SDF Data.
-See the Notebook "Main.ipynb" for more information. 
+See the Notebook ["Main.ipynb"](https://github.com/gardiens/Noise2NoiseMapping_pytorch/blob/main/main.ipynb) for more information.
+if you want to scale it to 3D, we provide a proof of concept in the notebook ["3D_version.iypnb"](https://github.com/gardiens/Noise2NoiseMapping_pytorch/blob/main/notebook/3D_version.ipynb) 
 
 We welcome any pull request to make it work on custom ply.
 

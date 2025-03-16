@@ -2,9 +2,9 @@ import numpy as np
 import torch
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-def sphere_data(npts, nb_hints, resolution=200) :
-    #points on the surface (sphere of radius 0.5, time between 0 and 1)
-    pts = torch.randn(npts,2,device=device)
+def sphere_data(npts, nb_hints, resolution=200,device=device,dim=2) :
+    #points on the surface (sphere of radius 0.5 in "dim" dim 
+    pts = torch.randn(npts,dim,device=device)
     pc = 0.5*torch.nn.functional.normalize(pts)
     nc = pts.clone()
 
