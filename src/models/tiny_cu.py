@@ -70,14 +70,8 @@ class SDF_TCNN(nn.Module):
         # x: [B, 3]
 
         x = (x + 1) / 2 # to [0, 1]
-        # print("initial x",x)
         x = self.encoder(x)
-        # print("x dtye",x.dtype)
-        # convert x to float 32
-        # print("x.shape",x.shape)
-        # check the type of backbone
-        # print("backbone",self.backbone[0].weight.dtype)
-        # print("output of x",torch.unique(x))
+
         
         x = x.to(dtype=torch.float)
         # print("after",x)
