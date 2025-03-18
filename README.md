@@ -17,7 +17,7 @@
 <h3 align="center"> Unofficial version of Fast Learning Signed Distance Functions from Noisy 3D Point Clouds via Noise to Noise Mapping </h3>
 
   <p align="center">
-     Unofficial Pytorch implementation  for Noise 2 Noise in Point cloud  by  Nayoung Kwon and  Pierrick Bournez
+     Unofficial Pytorch implementation  of Noise2Noise for Point Clouds by  Nayoung Kwon and  Pierrick Bournez
     <br />
     <a href="https://gitlab-student.centralesupelec.fr/alix.chazottes/fmr-2024-segmentation-hierarchique"><strong>Explore the docs »</strong></a>
 
