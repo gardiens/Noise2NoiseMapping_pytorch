@@ -29,7 +29,8 @@ This is an repository that try to reproduce the Paper: "Fast Learning Signed Dis
 It is focus on the shape reconstruction part. 
 The primary focus was to have preliminary working reproducible results. The implementation  is not intended to be quick but to be able to iterate quickly on it ( and reproducible). 
 
-We used it for a class project, we may add the report here. 
+We used it for a class project, we added the report [here](https://github.com/gardiens/Noise2NoiseMapping_pytorch/blob/main/Report-Noise2Mapping.pdf) 
+
 
 We don't think our results are as good as the paper claim to be, but we hope it will help people to have better result with this method. 
 
