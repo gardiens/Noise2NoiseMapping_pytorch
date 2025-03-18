@@ -27,7 +27,7 @@
 # 📌 Description
 This is an repository that try to reproduce the Paper: "Fast Learning Signed Distance Functions from Noisy 3D Point Clouds via Noise to Noise Mapping". 
 It is focus on the shape reconstruction part. 
-The primary focus was to have preliminary working reproducible results. The implementation  is not intended to be quick but to be able to iterate quickly on it ( and reproducible). 
+The primary focus was to have preliminary working reproducible results. The implementation  is not intended to be quick but to be able to iterate quickly on it ( and  be reproducible). 
 
 We used it for a class project, we may add the report here. 
 
